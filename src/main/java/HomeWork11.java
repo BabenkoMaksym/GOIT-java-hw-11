@@ -7,12 +7,12 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class HomeWork11 {
-    public List<String> getOddNames(List<String> input) {
+    public String getOddNames(List<String> input) {
 
         return IntStream.range(0, input.size())
                 .filter(index -> index % 2 == 1)
-                .mapToObj(input::get)
-                .collect(Collectors.toList());
+                .mapToObj(index1 -> index1 + " " + input.get(index1))
+                .collect(Collectors.joining(", "));
     }
 
     public List<String> getUpperSortedReverseNames(List<String> input) {
